@@ -1,0 +1,218 @@
+/* Header and Navigation */
+body {
+  font-family: system-ui, sans-serif;
+}
+header {
+  background-color: #1d4ed8;
+  padding: 1rem 2rem;
+}
+
+header nav {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #ffd700;
+}
+
+/* Main Content */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Spell Form */
+.spell-form {
+  background-color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.spell-form label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.spell-form input {
+  width: 80%;
+  padding: 0.75rem;
+  margin: 0.5rem 0 1rem 0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.spell-form input:focus {
+  border-color: #1d4ed8;
+  outline: none;
+}
+
+.spell-form button {
+  padding: 0.5rem 1rem;
+  background-color: #1d4ed8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.spell-form button:hover {
+  background-color: #2563eb;
+}
+
+.common-word {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #e0e7ff;
+  color: #1d4ed8;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.common-word:hover {
+  background-color: #c7d2fe;
+}
+
+/* Alphabet Container */
+#spelling-alphabet-container {
+  text-align: center;
+}
+
+#spelling-alphabet-container h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #1d4ed8;
+}
+
+/* Cards for each letter */
+.card {
+  display: inline-block;
+  background-color: #fff;
+  width: 120px;
+  margin: 0.75rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.card h1 {
+  font-size: 1.5rem;
+  color: #1d4ed8;
+}
+
+/* Emerged Symbols Section */
+.emerged-symbols {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.emerged-symbols h1 {
+  color: #1d4ed8;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.emerged-symbols .card {
+  display: inline-block;
+  width: 100px;
+  margin: 0.5rem;
+  padding: 0.75rem;
+}
+
+.emerged-symbols .card img {
+  height: 200px;
+}
+
+/* Space card */
+.space-card {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  background-color: #f0f0f0;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .spell-form input {
+    width: 100%;
+  }
+
+  .card {
+    width: 90px;
+    padding: 0.75rem;
+  }
+
+  .card h1 {
+    font-size: 1.2rem;
+  }
+
+  .emerged-symbols .card {
+    width: 80px;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header nav {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .card {
+    width: 70px;
+    padding: 0.5rem;
+  }
+
+  .card h1 {
+    font-size: 1rem;
+  }
+
+  .emerged-symbols .card {
+    width: 60px;
+    padding: 0.5rem;
+  }
+}
