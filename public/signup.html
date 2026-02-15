@@ -1,16 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1..0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1..0" />
     <title>Sign Up - Sign Smart Watch</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/signup.css" />
+  </head>
+  <body>
     <header>
-        <h1>Sign Up</h1>
-    </header>
-    <nav>
+      <nav>
         <a href="index.html">Home</a>
         <a href="speller.html">Speller</a>
         <a href="translator.html">Translator</a>
@@ -18,21 +17,103 @@
         <a href="simulation.html">Simulation</a>
         <a href="cheerup.html">Cheer Up</a>
         <a href="health.html">Health Monitor</a>
-    </nav>
-    <main>
-        <form id="signup-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age">
-            <button type="submit">Sign Up</button>
-        </form>
-        <p>Already have an account? <a href="login.html">Login</a></p>
+      </nav>
+    </header>
+
+    <main id="signup-container">
+      <form id="signup-form">
+        <label for="name" class="required">Full Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          placeholder="Please write your full name"
+        />
+
+        <label for="phone" class="required">Phone:</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          required
+          placeholder="Please write your phone number"
+        />
+
+        <label for="user-type" class="required">User Type:</label>
+        <select id="user-type" name="user-type" required>
+          <option value="">Select user type</option>
+          <option value="deaf">Deaf</option>
+          <option value="interpreter">Interpreter</option>
+          <option value="family">Family Member</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="sign-language" class="required"
+          >Preferred Sign Language:</label
+        >
+        <select id="sign-language" name="sign-language" required>
+          <option value="">Select sign language</option>
+          <option value="asl">American Sign Language (ASL)</option>
+          <option value="bsl">British Sign Language (BSL)</option>
+          <option value="arabic">Arabic Sign Language</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="country" class="required">Country:</label>
+        <input
+          type="text"
+          id="country"
+          name="country"
+          required
+          placeholder="Enter your country"
+        />
+
+        <label for="emergency">Emergency Contact (Optional):</label>
+        <input
+          type="tel"
+          id="emergency"
+          name="emergency"
+          placeholder="Enter emergency contact number"
+        />
+
+        <label for="email" class="required">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="Please write your email"
+        />
+
+        <label for="password" class="required">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          placeholder="Please write your password"
+        />
+
+        <label for="confirm-password" class="required">Confirm Password:</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          required
+          placeholder="Confirm your password"
+        />
+
+        <label>
+          <input type="checkbox" name="terms" required />
+          I agree to <a href="#" class="terms"> Terms</a>
+        </label>
+
+        <button type="submit">Create Account</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Login</a></p>
     </main>
-    <script src="js/auth.js"></script>
-</body>
+
+    <script src="js/singup.js"></script>
+  </body>
 </html>

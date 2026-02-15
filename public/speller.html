@@ -1,16 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Speller - Sign Smart Watch</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/speller.css" />
+  </head>
+  <body>
     <header>
-        <h1>Speller</h1>
-    </header>
-    <nav>
+      <nav>
         <a href="index.html">Home</a>
         <a href="translator.html">Translator</a>
         <a href="learning.html">Learning</a>
@@ -18,9 +16,244 @@
         <a href="cheerup.html">Cheer Up</a>
         <a href="health.html">Health Monitor</a>
         <a href="login.html">Login</a>
-    </nav>
+      </nav>
+    </header>
+
     <main>
-        <p>This is the Speller page.</p>
+      <div class="spell-form">
+        <label for="speller-search-input">Enter text to spell</label>
+        <br />
+        <input
+          type="text"
+          placeholder="Type any word or phrase.."
+          name="speller-search-input"
+          id="speller-search-input"
+        />
+        <div class="" title="Try Okay" onclick="getCommonWords(this.title)">
+          Try "Okay"
+        </div>
+        <div class="" title="Try Hello" onclick="getCommonWords(this.title)">
+          Try "Hello"
+        </div>
+        <button>clear</button>
+      </div>
+
+      <div id="emerged-symbols"></div>
+
+      <div class="saved-aplphabets">
+        <div id="spelling-alphabet-container">
+          <h1>Sign Language alphabet Reference</h1>
+
+          <div class="card" title="A">
+            <img
+              src="assist/English alphabet/Sign_language_A.svg"
+              alt="A Alphabet"
+            />
+            <h1>A</h1>
+          </div>
+
+          <div class="card" title="B">
+            <img
+              src="assist/English alphabet/Sign_language_B.svg"
+              alt="B Alphabet"
+            />
+            <h1>B</h1>
+          </div>
+
+          <div class="card" title="C">
+            <img
+              src="assist/English alphabet/Sign_language_C.svg"
+              alt="C Alphabet"
+            />
+            <h1>C</h1>
+          </div>
+
+          <div class="card" title="D">
+            <img
+              src="assist/English alphabet/Sign_language_D.svg"
+              alt="D Alphabet"
+            />
+            <h1>D</h1>
+          </div>
+
+          <div class="card" title="E">
+            <img
+              src="assist/English alphabet/Sign_language_E.svg"
+              alt="E Alphabet"
+            />
+            <h1>E</h1>
+          </div>
+
+          <div class="card" title="F">
+            <img
+              src="assist/English alphabet/Sign_language_F.svg"
+              alt="F Alphabet"
+            />
+            <h1>F</h1>
+          </div>
+
+          <div class="card" title="G">
+            <img
+              src="assist/English alphabet/Sign_language_G.svg"
+              alt="G Alphabet"
+            />
+            <h1>G</h1>
+          </div>
+
+          <div class="card" title="H">
+            <img
+              src="assist/English alphabet/Sign_language_H.svg"
+              alt="H Alphabet"
+            />
+            <h1>H</h1>
+          </div>
+
+          <div class="card" title="I">
+            <img
+              src="assist/English alphabet/Sign_language_I.svg"
+              alt="I Alphabet"
+            />
+            <h1>I</h1>
+          </div>
+
+          <div class="card" title="J">
+            <img
+              src="assist/English alphabet/Sign_language_J.svg"
+              alt="J Alphabet"
+            />
+            <h1>J</h1>
+          </div>
+
+          <div class="card" title="K">
+            <img
+              src="assist/English alphabet/Sign_language_K.svg"
+              alt="K Alphabet"
+            />
+            <h1>K</h1>
+          </div>
+
+          <div class="card" title="L">
+            <img
+              src="assist/English alphabet/Sign_language_L.svg"
+              alt="L Alphabet"
+            />
+            <h1>L</h1>
+          </div>
+
+          <div class="card" title="M">
+            <img
+              src="assist/English alphabet/Sign_language_M.svg"
+              alt="M Alphabet"
+            />
+            <h1>M</h1>
+          </div>
+
+          <div class="card" title="N">
+            <img
+              src="assist/English alphabet/Sign_language_N.svg"
+              alt="N Alphabet"
+            />
+            <h1>N</h1>
+          </div>
+
+          <div class="card" title="O">
+            <img
+              src="assist/English alphabet/Sign_language_O.svg"
+              alt="O Alphabet"
+            />
+            <h1>O</h1>
+          </div>
+
+          <div class="card" title="P">
+            <img
+              src="assist/English alphabet/Sign_language_P.svg"
+              alt="P Alphabet"
+            />
+            <h1>P</h1>
+          </div>
+
+          <div class="card" title="Q">
+            <img
+              src="assist/English alphabet/Sign_language_Q.svg"
+              alt="Q Alphabet"
+            />
+            <h1>Q</h1>
+          </div>
+
+          <div class="card" title="R">
+            <img
+              src="assist/English alphabet/Sign_language_R.svg"
+              alt="R Alphabet"
+            />
+            <h1>R</h1>
+          </div>
+
+          <div class="card" title="S">
+            <img
+              src="assist/English alphabet/Sign_language_S.svg"
+              alt="S Alphabet"
+            />
+            <h1>S</h1>
+          </div>
+
+          <div class="card" title="T">
+            <img
+              src="assist/English alphabet/Sign_language_T.svg"
+              alt="T Alphabet"
+            />
+            <h1>T</h1>
+          </div>
+
+          <div class="card" title="U">
+            <img
+              src="assist/English alphabet/Sign_language_U.svg"
+              alt="U Alphabet"
+            />
+            <h1>U</h1>
+          </div>
+
+          <div class="card" title="V">
+            <img
+              src="assist/English alphabet/Sign_language_V.svg"
+              alt="V Alphabet"
+            />
+            <h1>V</h1>
+          </div>
+
+          <div class="card" title="W">
+            <img
+              src="assist/English alphabet/Sign_language_W.svg"
+              alt="W Alphabet"
+            />
+            <h1>W</h1>
+          </div>
+
+          <div class="card" title="X">
+            <img
+              src="assist/English alphabet/Sign_language_X.svg"
+              alt="X Alphabet"
+            />
+            <h1>X</h1>
+          </div>
+
+          <div class="card" title="Y">
+            <img
+              src="assist/English alphabet/Sign_language_Y.svg"
+              alt="Y Alphabet"
+            />
+            <h1>Y</h1>
+          </div>
+
+          <div class="card" title="Z">
+            <img
+              src="assist/English alphabet/Sign_language_Z.svg"
+              alt="Z Alphabet"
+            />
+            <h1>Z</h1>
+          </div>
+        </div>
+      </div>
     </main>
-</body>
+    <script src="js/speller.js"></script>
+  </body>
 </html>

@@ -1,16 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Health Monitor - Sign Smart Watch</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/health monitor.css" />
+  </head>
+  <body>
     <header>
-        <h1>Health Monitor</h1>
-    </header>
-    <nav>
+      <nav>
         <a href="index.html">Home</a>
         <a href="speller.html">Speller</a>
         <a href="translator.html">Translator</a>
@@ -18,9 +17,58 @@
         <a href="simulation.html">Simulation</a>
         <a href="cheerup.html">Cheer Up</a>
         <a href="login.html">Login</a>
-    </nav>
+      </nav>
+    </header>
+
     <main>
-        <p>This is the Health Monitor page.</p>
+      <div class="container">
+        <header>
+          <h1>Health Monitor</h1>
+          <button id="contrast-toggle">High Contrast</button>
+        </header>
+
+        <section class="cards">
+          <div class="card">
+            <h2>Heart Rate</h2>
+            <p id="heart-rate">-- bpm</p>
+            <span class="status" id="hr-status">Normal</span>
+          </div>
+          <div class="card">
+            <h2>Stress Level</h2>
+            <p id="stress-level">-- %</p>
+            <span class="status" id="stress-status">Normal</span>
+          </div>
+          <div class="card">
+            <h2>Body Temperature</h2>
+            <p id="body-temp">-- °C</p>
+            <span class="status" id="temp-status">Normal</span>
+          </div>
+          <div class="card">
+            <h2>Hydration Level</h2>
+            <p id="hydration-level">-- %</p>
+            <span class="status" id="hydration-status">Normal</span>
+          </div>
+          <div class="card">
+            <h2>Activity Level</h2>
+            <p id="activity-level">--</p>
+            <span class="status" id="activity-status">Normal</span>
+          </div>
+          <div class="card">
+            <h2>Last Check</h2>
+            <p id="last-check">--</p>
+          </div>
+        </section>
+
+        <button class="alert-btn" id="manual-alert">
+          Send Emergency Alert
+        </button>
+
+        <div id="chart-container">
+          <h2>Historical Data</h2>
+          <canvas id="vitalsChart" width="400" height="200"></canvas>
+        </div>
+      </div>
     </main>
-</body>
+    <script src="js/health monitor.js"></script>
+  </body>
 </html>

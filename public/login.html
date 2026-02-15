@@ -1,16 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Sign Smart Watch</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
     <header>
-        <h1>Login</h1>
-    </header>
-    <nav>
+      <nav>
         <a href="index.html">Home</a>
         <a href="speller.html">Speller</a>
         <a href="translator.html">Translator</a>
@@ -18,17 +17,19 @@
         <a href="simulation.html">Simulation</a>
         <a href="cheerup.html">Cheer Up</a>
         <a href="health.html">Health Monitor</a>
-    </nav>
-    <main>
-        <form id="login-form">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
-        </form>
-        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+      </nav>
+    </header>
+
+    <main id="login-container">
+      <form id="login-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="signup.html">Sign up</a></p>
     </main>
     <script src="js/auth.js"></script>
-</body>
+  </body>
 </html>
