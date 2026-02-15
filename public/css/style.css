@@ -15,25 +15,33 @@ body {
 }
 
 header {
-  background-color: #333;
+  background-color: #1d4ed8;
+  padding: 1rem 2rem;
   color: white;
-  padding: 1rem;
   text-align: center;
 }
 
-nav {
-  background-color: #444;
-  padding: 1rem;
+header {
+  background-color: #1d4ed8;
+  padding: 1rem 2rem;
 }
 
-nav a {
-  color: white;
+header nav {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+header nav a {
+  color: #fff;
   text-decoration: none;
-  padding: 0.5rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
-  background-color: #555;
+header nav a:hover {
+  color: #ffd700;
 }
 
 main {
