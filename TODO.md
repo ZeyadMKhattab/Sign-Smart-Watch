@@ -2,10 +2,10 @@
 
 ## Features
 
-- [ ]  Speller
+- [X]  Speller
 - [ ]  translate
 - [ ]  learning and training (!! IMPORTANT and need improvement)
-- [ ]  Real-Time Simulation (elsaid)
+- [X]  Real-Time Simulation (elsaid)
 - [ ]  Cheer up
 - [ ]  Health monitor
 
