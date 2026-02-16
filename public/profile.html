@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - Sign Smart Watch</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="speller.html">Speller</a>
+        <a href="translator.html">Translator</a>
+        <a href="health.html">Health Monitor</a>
+        <a href="learning.html">Learning</a>
+        <a href="cheerup.html">Cheer Up</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Signup</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <header>
+          <h1>User Profile</h1>
+          <button id="contrast-toggle">High Contrast</button>
+        </header>
+
+        <section class="cards">
+          <div class="card">
+            <h2>Name</h2>
+            <p id="user-name">--</p>
+          </div>
+          <div class="card">
+            <h2>Email</h2>
+            <p id="user-email">--</p>
+          </div>
+          <div class="card">
+            <h2>Age</h2>
+            <p id="user-age">--</p>
+          </div>
+        </section>
+
+        <button class="logout-btn" id="logout">
+          Logout
+        </button>
+      </div>
+    </main>
+    <script src="js/auth-check.js"></script>
+    <script src="js/profile.js"></script>
+  </body>
+</html>

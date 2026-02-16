@@ -3,7 +3,7 @@
 ## Features
 
 - [X]  Speller
-- [ ]  translate
+- [X]  translate
 - [ ]  learning and training (!! IMPORTANT and need improvement)
 - [X]  Real-Time Simulation (elsaid)
 - [ ]  Cheer up

@@ -118,4 +118,33 @@ router.post('/login', async (req, res) => {
   }
 });
 
+/*
+ Check authentication status
+ */
+router.get('/status', (req, res) => {
+    if (req.session.user) {
+        res.json({
+            loggedIn: true,
+            user: req.session.user
+        });
+    } else {
+        res.json({
+            loggedIn: false
+        });
+    }
+});
+
+/*
+ Logout user
+ */
+router.post('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            return res.status(500).json({ message: 'Could not log out, please try again' });
+        }
+        res.clearCookie('connect.sid'); // The default cookie name for express-session
+        res.json({ message: 'Logout successful' });
+    });
+});
+
 module.exports = router;

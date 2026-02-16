@@ -26,6 +26,7 @@ const authRoutes = require('./routes/auth');
 const translatorRoutes = require('./routes/translator');
 const learningRoutes = require('./routes/learning');
 const healthRoutes = require('./routes/health');
+const userRoutes = require('./routes/user');
 
 const { checkAuth } = require('./middleware/auth');
 
@@ -36,6 +37,7 @@ app.use('/api/translator', translatorRoutes);
 // Protected routes (authentication required)
 app.use('/api/learning', checkAuth, learningRoutes);
 app.use('/api/health', checkAuth, healthRoutes);
+app.use('/', userRoutes);
 
 // Serve main HTML file
 app.get("/", async (req, res) => {
