@@ -1,53 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Translator - Sign Smart Watch</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="speller.html">Speller</a>
-      <a href="translator.html">Translator</a>
-      <a href="simulation.html">Simulation</a>
-      <a href="health.html">Health Monitor</a>
-      <a href="learning.html">Learning</a>
-      <a href="cheerup.html">Cheer Up</a>
-      <a href="login.html">Login</a>
-      <a href="signup.html">Signup</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Translator - Sign Smart Watch</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <div class="nav-links">
+          <a href="speller.html">Speller</a>
+          <a href="translator.html">Translator</a>
+          <a href="simulation.html">Simulation</a>
+          <a href="health.html">Health Monitor</a>
+          <a href="learning.html">Learning</a>
+          <a href="cheerup.html">Cheer Up</a>
+          <a href="login.html">Login</a>
+        </div>
+      </nav>
+    </header>
 
-  <main>
-    <h1 style="margin: 0 13px;">Sign Language Translator</h1>
+    <main>
+      <h1 style="margin: 0 13px">Sign Language Translator</h1>
 
-    <div class="translator-section">
-      <h2>Speech to Sign</h2>
-      <div class="controls">
-        <label for="language-select">Language:</label>
-        <select id="language-select">
-          <option value="en-US">ASL (American)</option>
-          <option value="ar-EG">ESL (Egyptian)</option>
-        </select>
-        <button id="start-stop-btn">Start Listening</button>
+      <div class="translator-section">
+        <h2>Speech to Sign</h2>
+        <div class="controls">
+          <label for="language-select">Language:</label>
+          <select id="language-select">
+            <option value="en-US">ASL (American)</option>
+            <option value="ar-EG">ESL (Egyptian)</option>
+          </select>
+          <button id="start-stop-btn">Start Listening</button>
+        </div>
+        <p id="recognized-text">Recognized text will appear here.</p>
       </div>
-      <p id="recognized-text">Recognized text will appear here.</p>
-    </div>
 
-    <div class="translator-section">
-      <h2>Text to Sign</h2>
-      <div class="controls">
-        <input type="text" id="text-input" placeholder="Enter text to translate">
-        <button id="translate-btn">Translate</button>
+      <div class="translator-section">
+        <h2>Text to Sign</h2>
+        <div class="controls">
+          <input
+            type="text"
+            id="text-input"
+            placeholder="Enter text to translate"
+          />
+          <button id="translate-btn">Translate</button>
+        </div>
       </div>
-    </div>
 
-    <div id="sign-image-container"></div>
-  </main>
-  <script src="js/auth-check.js"></script>
-  <script src="js/translator.js"></script>
-</body>
+      <div id="sign-image-container"></div>
+    </main>
+    <footer
+      style="
+        background: var(--text-primary);
+        color: var(--white);
+        padding: var(--space-2xl) var(--space-lg);
+        text-align: center;
+      "
+    >
+      <div style="max-width: 1200px; margin: 0 auto">
+        <p
+          style="
+            margin-bottom: var(--space-sm);
+            color: var(--white);
+            opacity: 0.9;
+          "
+        >
+          &copy; 2026 ICIC Sign Smart Watch. Empowering communication and health
+          monitoring.
+        </p>
+        <p style="font-size: 0.9rem; color: var(--white); opacity: 0.7">
+          Making sign language accessible to everyone, everywhere.
+        </p>
+      </div>
+    </footer>
+    <script src="js/auth-check.js"></script>
+    <script src="js/translator.js"></script>
+  </body>
 </html>

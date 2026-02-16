@@ -6,7 +6,7 @@
 - [X]  translate
 - [ ]  learning and training (!! IMPORTANT and need improvement)
 - [X]  Real-Time Simulation (elsaid)
-- [ ]  Cheer up
+- [X]  Cheer up
 - [X]  Health monitor
 
 ## Code

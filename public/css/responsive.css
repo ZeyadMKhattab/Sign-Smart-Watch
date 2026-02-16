@@ -1,0 +1,287 @@
+
+@media (max-width: 1200px) {
+  :root {
+    --space-3xl: 4rem;
+    --space-2xl: 3rem;
+  }
+
+  .hero-section {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .features-section,
+  .progress-section,
+  .cards {
+    padding: var(--space-2xl) var(--space-md);
+  }
+}
+
+@media (max-width: 1024px) {
+  header nav {
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+
+  header nav a {
+    font-size: 0.875rem;
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .features-section {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  .progress-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .hero-section {
+    padding: var(--space-xl) var(--space-md);
+    text-align: center;
+  }
+
+  .features-section,
+  .progress-section,
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: var(--space-lg);
+  }
+
+  .container header {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-sm);
+  }
+
+  .spell-form input {
+    width: 100%;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  #spelling-alphabet-container,
+  #egyptian-alphabet-container {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  button,
+  .btn-primary {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  header nav {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .hero-section {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .card,
+  .feature-card {
+    padding: var(--space-md);
+  }
+
+  #spelling-alphabet-container .card,
+  #egyptian-alphabet-container .card {
+    width: 90px;
+    padding: var(--space-sm);
+  }
+
+  #spelling-alphabet-container .card h1,
+  #egyptian-alphabet-container .card h1 {
+    font-size: 1rem;
+  }
+
+  .progress-value {
+    font-size: 2rem;
+  }
+
+  button,
+  .btn-primary {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.875rem;
+  }
+}
+
+/* === Utility tweaks for small devices === */
+.text-center {
+  text-align: center !important;
+}
+.flex-center {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.grid-responsive {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  gap: var(--space-md) !important;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Accessibility: larger touch targets on mobile */
+button,
+.btn-primary,
+.spell-form input,
+.spell-form button {
+  min-height: 48px;
+  touch-action: manipulation;
+}
+
+
+header {
+  background: var(--white);
+  padding: var(--space-md) var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  transition: max-height 0.3s ease;
+}
+
+header nav a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-md);
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+header nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 80%;
+  height: 3px;
+  background: var(--primary-gradient);
+  border-radius: var(--radius-full);
+  transition: transform var(--transition-base);
+}
+
+header nav a:hover {
+  color: var(--primary-blue);
+  background: var(--light-blue);
+}
+
+header nav a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* === Hamburger Menu for Mobile === */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--primary-blue);
+  border-radius: var(--radius-full);
+  transition: all 0.3s ease;
+}
+
+/* === Responsive Styles === */
+@media (max-width: 768px) {
+  header {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    width: 100%;
+    gap: 0;
+    transition: max-height 0.3s ease;
+  }
+
+  header nav a {
+    width: 100%;
+    padding: var(--space-md);
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-open {
+    max-height: 500px; /* enough to show all menu items */
+  }
+
+  .nav-open a {
+    border-bottom: 1px solid var(--light-gray);
+  }
+}
+
+/* Hamburger animation when active */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}

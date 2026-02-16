@@ -223,6 +223,47 @@ header nav a:active {
   transform: scale(0.95);
 }
 
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: block;
+  }
+
+  .nav-links a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  header nav {
+    flex-wrap: wrap;
+  }
+}
+
+
 /* === MAIN CONTENT === */
 main {
   animation: fadeInUp 0.6s ease;
@@ -954,6 +995,37 @@ form button {
   border-radius: var(--radius-lg);
   min-height: 100px;
   border: 2px dashed var(--light-blue);
+  align-items: center;
+}
+
+#emerged-symbols .card {
+  width: 80px; /* A bit larger for clarity */
+  height: auto;
+  padding: var(--space-xs);
+  margin: var(--space-xs);
+  cursor: default;
+  background: var(--white);
+  border: 2px solid var(--primary-blue-light);
+  transform: none; /* Override hover effect */
+  box-shadow: var(--shadow-sm);
+}
+
+#emerged-symbols .card:hover {
+  transform: none; /* Disable hover movement */
+  box-shadow: var(
+    --shadow-sm
+  ); /* Keep shadow consistent, no hover change */
+  border-color: var(--primary-blue-light);
+}
+
+#emerged-symbols .card img {
+  max-height: 50px; /* Adjust image size within the card */
+}
+
+#emerged-symbols .card h1 {
+  font-size: 1rem; /* Adjust text size for the smaller card */
+  margin-top: var(--space-xs);
+  margin-bottom: 0;
 }
 
 .space-card {
@@ -1421,3 +1493,4 @@ footer {
   background: var(--white);
   margin-top: var(--space-xl);
 }
+

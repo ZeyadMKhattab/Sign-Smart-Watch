@@ -45,15 +45,20 @@
     <header>
       <nav>
         <a href="index.html">Home</a>
-        <a href="speller.html">Speller</a>
-        <a href="translator.html">Translator</a>
-        <a href="simulation.html">Simulation</a>
-        <a href="learning.html">Learning</a>
-        <a href="simulation.html">Simulation</a>
-        <a href="cheerup.html">Cheer Up</a>
-        <a href="health.html">Health Monitor</a>
-        <a href="login.html">Login</a>
-        <a href="signup.html">Signup</a>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <div class="nav-links">
+          <a href="speller.html">Speller</a>
+          <a href="translator.html">Translator</a>
+          <a href="simulation.html">Simulation</a>
+          <a href="health.html">Health Monitor</a>
+          <a href="learning.html">Learning</a>
+          <a href="cheerup.html">Cheer Up</a>
+          <a href="login.html">Login</a>
+        </div>
       </nav>
     </header>
     <section class="main">
@@ -67,6 +72,31 @@
       <div id="prediction">Loading...</div>
     </section>
 
+    <footer
+      style="
+        background: var(--text-primary);
+        color: var(--white);
+        padding: var(--space-2xl) var(--space-lg);
+        text-align: center;
+      "
+    >
+      <div style="max-width: 1200px; margin: 0 auto">
+        <p
+          style="
+            margin-bottom: var(--space-sm);
+            color: var(--white);
+            opacity: 0.9;
+          "
+        >
+          &copy; 2026 ICIC Sign Smart Watch. Empowering communication and health
+          monitoring.
+        </p>
+        <p style="font-size: 0.9rem; color: var(--white); opacity: 0.7">
+          Making sign language accessible to everyone, everywhere.
+        </p>
+      </div>
+    </footer>
+
     <script src="js/auth-check.js"></script>
     <script>
       const video = document.getElementById("video");
@@ -77,9 +107,7 @@
       let lastSpeech = 0;
       let lastPoints = [];
 
-      /* =========================
-   SMOOTHING (anti shake)
-========================= */
+      
       function smooth(points) {
         if (lastPoints.length === 0) {
           lastPoints = points;

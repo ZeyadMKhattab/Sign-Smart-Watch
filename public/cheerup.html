@@ -5,17 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cheer Up</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
   </head>
   <body data-mood="happy">
     <header id="header-cheer-up">
       <nav>
         <a href="index.html">Home</a>
-        <a href="speller.html">Speller</a>
-        <a href="translator.html">Translator</a>
-        <a href="health.html">Health Monitor</a>
-        <a href="learning.html">Learning</a>
-        <a href="cheerup.html">Cheer Up</a>
-        <a href="login.html">Login</a>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <div class="nav-links">
+          <a href="speller.html">Speller</a>
+          <a href="translator.html">Translator</a>
+          <a href="health.html">Health Monitor</a>
+          <a href="learning.html">Learning</a>
+          <a href="cheerup.html">Cheer Up</a>
+          <a href="login.html">Login</a>
+        </div>
       </nav>
     </header>
 
@@ -49,12 +57,32 @@
       </section>
     </main>
 
-    <footer>
-      <p>Made with ❤️ for accessibility and positivity</p>
+    <footer
+      style="
+        background: var(--text-primary);
+        color: var(--white);
+        padding: var(--space-2xl) var(--space-lg);
+        text-align: center;
+      "
+    >
+      <div style="max-width: 1200px; margin: 0 auto">
+        <p
+          style="
+            margin-bottom: var(--space-sm);
+            color: var(--white);
+            opacity: 0.9;
+          "
+        >
+          &copy; 2026 ICIC Sign Smart Watch. Empowering communication and health
+          monitoring.
+        </p>
+        <p style="font-size: 0.9rem; color: var(--white); opacity: 0.7">
+          Making sign language accessible to everyone, everywhere.
+        </p>
+      </div>
     </footer>
 
     <script>
-      // ===== Motivation Quotes =====
       const quotes = {
         happy: [
           {
@@ -185,27 +213,52 @@
       const addBtn = document.getElementById("add-todo");
       const todoList = document.getElementById("todo-list");
 
+      // Load todos from localStorage
+      document.addEventListener("DOMContentLoaded", () => {
+        const todos = JSON.parse(localStorage.getItem("todos") || "[]");
+        todos.forEach(renderTodoItem);
+      });
+
       function renderTodoItem(text) {
         const li = document.createElement("li");
         li.textContent = text;
         const delBtn = document.createElement("button");
         delBtn.textContent = "Delete";
         delBtn.classList.add("delete-btn");
-        delBtn.addEventListener("click", () => li.remove());
+        delBtn.addEventListener("click", () => {
+          li.remove();
+          removeTodoFromStorage(text);
+        });
         li.appendChild(delBtn);
         todoList.appendChild(li);
+      }
+
+      function addTodoToStorage(text) {
+        const todos = JSON.parse(localStorage.getItem("todos") || "[]");
+        todos.push(text);
+        localStorage.setItem("todos", JSON.stringify(todos));
+      }
+
+      function removeTodoFromStorage(text) {
+        let todos = JSON.parse(localStorage.getItem("todos") || "[]");
+        todos = todos.filter((todo) => todo !== text);
+        localStorage.setItem("todos", JSON.stringify(todos));
       }
 
       addBtn.addEventListener("click", () => {
         const task = todoInput.value.trim();
         if (task) {
           renderTodoItem(task);
+          addTodoToStorage(task);
           todoInput.value = "";
         }
       });
 
       todoInput.addEventListener("keypress", (e) => {
-        if (e.key === "Enter") addBtn.click();
+        if (e.key === "Enter") {
+          e.preventDefault();
+          addBtn.click();
+        }
       });
     </script>
   </body>

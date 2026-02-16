@@ -27,13 +27,6 @@ const getCommonWords = function (word) {
         spelledWord += " ";
         const spaceCard = document.createElement("div");
         spaceCard.classList.add("space-card");
-        spaceCard.style.display = "inline-block";
-        spaceCard.style.width = "50px";
-        spaceCard.style.height = "50px";
-        spaceCard.style.margin = "5px";
-        spaceCard.style.backgroundColor = "#f0f0f0";
-        spaceCard.style.border = "2px dashed #ccc";
-        spaceCard.style.borderRadius = "8px";
         emergedSymbolsContainer.appendChild(spaceCard);
       }
     }
@@ -133,11 +126,6 @@ function addSymbol(letter) {
 // --- EMERGE CARD FUNCTION ---
 function emergeCard(card) {
   const clone = card.cloneNode(true);
-  clone.style.display = "inline-block";
-  clone.style.margin = "5px";
-  clone.style.width = "50px";
-  clone.style.height = "auto";
-  clone.querySelector("h1").style.fontSize = "14px";
   emergedSymbolsContainer.appendChild(clone);
 }
 
@@ -165,13 +153,6 @@ inputField.addEventListener("input", (e) => {
         spelledWord += " ";
         const spaceCard = document.createElement("div");
         spaceCard.classList.add("space-card");
-        spaceCard.style.display = "inline-block";
-        spaceCard.style.width = "50px";
-        spaceCard.style.height = "50px";
-        spaceCard.style.margin = "5px";
-        spaceCard.style.backgroundColor = "#f0f0f0";
-        spaceCard.style.border = "2px dashed #ccc";
-        spaceCard.style.borderRadius = "8px";
         emergedSymbolsContainer.appendChild(spaceCard);
       }
     }
