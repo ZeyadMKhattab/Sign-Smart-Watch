@@ -1050,6 +1050,56 @@ form button {
   height: auto !important;
 }
 
+/* === ABOUT US SECTION === */
+.about-us-section {
+  background: var(--background-secondary);
+  padding: var(--space-3xl) var(--space-lg);
+  text-align: left;
+}
+
+.about-us-section h2 {
+  text-align: center;
+  color: var(--primary-blue);
+  margin-bottom: var(--space-xl);
+}
+
+.about-us-section h3 {
+  color: var(--primary-blue-dark);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-md);
+  font-size: 1.75rem;
+}
+
+.about-us-section h4 {
+  color: var(--primary-blue);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  font-size: 1.5rem;
+}
+
+.about-us-section h5 {
+  color: var(--text-primary);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-xs);
+  font-size: 1.25rem;
+}
+
+.about-us-section p {
+  line-height: 1.8;
+  margin-bottom: var(--space-md);
+}
+
+.about-us-section ul {
+  list-style-position: inside;
+  margin-left: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.about-us-section li {
+  margin-bottom: var(--space-sm);
+  line-height: 1.8;
+}
+
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 1200px) {
   :root {
