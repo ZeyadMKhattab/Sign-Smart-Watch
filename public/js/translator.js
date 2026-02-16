@@ -98,45 +98,49 @@ document.addEventListener('DOMContentLoaded', () => {
         let sanitizedText = text;
         if (config.path.includes('English')) {
             sanitizedText = text.toUpperCase().replace(/[^A-Z0-9]/g, '');
+        } else if (config.path.includes('Egyptian')) {
+            sanitizedText = text.replace(/\s+/g, ''); // Remove spaces
         }
 
         let i = 0;
         while (i < sanitizedText.length) {
             let char = sanitizedText[i];
-            let nextChar = sanitizedText[i+1];
-            let imageName = char;
+            let imageName = null;
+            let isEgyptian = config.path.includes('Egyptian');
 
-            if (config.path.includes('Egyptian')) {
-                // Check for two-letter combinations like 'ال' and 'لا'
+            if (isEgyptian) {
+                // Check for two-letter combinations
                 if (i + 1 < sanitizedText.length) {
-                    let twoLetterCombo = char + nextChar;
+                    let twoLetterCombo = char + sanitizedText[i+1];
                     if (config.charMap[twoLetterCombo]) {
                         imageName = config.charMap[twoLetterCombo];
-                        i++; // Skip the next character
                         char = twoLetterCombo;
-                    } else if (config.charMap[char]) {
-                        imageName = config.charMap[char];
+                        i++; // consume extra char
                     }
-                } else if (config.charMap[char]) {
+                }
+                // Check for single character if combo not found
+                if (imageName === null && config.charMap[char]) {
                     imageName = config.charMap[char];
                 }
+            } else { // English
+                imageName = char;
             }
 
+            if (imageName) {
+                const img = document.createElement('img');
+                if (isEgyptian) {
+                    img.src = `${config.path}${imageName}.png`;
+                } else {
+                    img.src = `${config.path}Sign_language_${imageName}.svg`;
+                }
 
-            const img = document.createElement('img');
-            if (config.path.includes('Egyptian')) {
-                img.src = `${config.path}${imageName}.png`;
-            } else {
-                img.src = `${config.path}Sign_language_${imageName}.svg`;
+                img.alt = `Sign for ${char}`;
+                img.classList.add('sign-image');
+                img.onerror = () => {
+                    img.alt = `Image not found for ${char}`;
+                };
+                signImageContainer.appendChild(img);
             }
-
-            img.alt = `Sign for ${char}`;
-            img.classList.add('sign-image');
-            img.onerror = () => {
-                img.alt = `Image not found for ${char}`;
-                // You could display a placeholder image or text here
-            };
-            signImageContainer.appendChild(img);
             i++;
         }
     }

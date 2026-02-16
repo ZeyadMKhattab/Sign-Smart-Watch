@@ -3,14 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sign Smart Watch - Your intelligent companion for learning sign language and monitoring health. Bridge communication gaps with innovative technology."
+    />
+    <meta
+      name="keywords"
+      content="sign language, health monitor, education, accessibility, smart watch"
+    />
     <link rel="stylesheet" href="./css/style.css" />
-
-    <title>Sign Smart Watch</title>
+    <title>Sign Smart Watch - Learn Sign Language & Monitor Health</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="index.html">Home</a>
+    <header role="banner">
+      <nav role="navigation" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
         <a href="speller.html">Speller</a>
         <a href="translator.html">Translator</a>
         <a href="simulation.html">Simulation</a>
@@ -21,102 +28,356 @@
         <a href="signup.html">Signup</a>
       </nav>
     </header>
-    <!-- HERO SECTION -->
-    <section id="Hero" class="main hero-section">
-      <h1 class="title hero-title">Sign Smart Watch</h1>
 
-      <h3 class="hero-subtitle">
-        Your Smart Sign Language learning companion.
-        <strong class="hero-highlight"> Learn, Connect and communicate </strong>
-        through the power of the Gestures
-      </h3>
+    <main role="main">
+      <section id="Hero" class="hero-section" aria-labelledby="hero-title">
+        <h1 id="hero-title" class="title hero-title">Sign Smart Watch</h1>
 
-      <div class="hero-actions">
-        <button class="btn-primary hero-btn">Learn More</button>
-      </div>
-    </section>
-
-    <!-- FEATURES SECTION -->
-    <section class="features features-section">
-      <div class="feature feature-card">
-        <div class="icon feature-icon"></div>
-        <div class="title feature-title">Learning & Training</div>
-        <p class="feature-description">
-          Master 20 essential hand gestures with interactive quizzes
+        <p class="hero-subtitle">
+          Your intelligent companion for
+          <strong class="hero-highlight">learning sign language</strong>
+          and
+          <strong class="hero-highlight">monitoring health</strong>. Bridge
+          communication gaps with innovative technology.
         </p>
-      </div>
 
-      <div class="feature feature-card">
-        <div class="icon feature-icon"></div>
-        <div class="title feature-title">Translate</div>
-        <p class="feature-description">
-          Convert words to gestures and gestures to words instantly
-        </p>
-      </div>
-
-      <div class="feature feature-card">
-        <div class="icon feature-icon"></div>
-        <div class="title feature-title">Speller</div>
-        <p class="feature-description">
-          Spell out any word using sign language alphabet
-        </p>
-      </div>
-
-      <div class="feature feature-card">
-        <div class="icon feature-icon"></div>
-        <div class="title feature-title">Real-Time Simulation</div>
-        <p class="feature-description">
-          Practice with simulated smart jacket input
-        </p>
-      </div>
-
-      <div class="feature feature-card">
-        <div class="icon feature-icon"></div>
-        <div class="title feature-title">Cheer Up</div>
-        <p class="feature-description">
-          Get motivated with inspiring daily messages
-        </p>
-      </div>
-
-      <div class="feature feature-card">
-        <div class="icon feature-icon"></div>
-        <div class="title feature-title">Health Monitor</div>
-        <p class="feature-description">
-          Track your health metrics from smart jacket
-        </p>
-      </div>
-    </section>
-
-    <!-- PROGRESS SECTION -->
-    <section id="YourProgress" class="progress-section">
-      <div class="progress-container">
-        <h2 class="section-title progress-title">Your Progress</h2>
-
-        <div class="stats-grid progress-stats">
-          <div class="stat-card progress-card">
-            <span class="stat-value progress-value">12/20</span>
-            <span class="stat-label progress-label"> Gestures Mastered </span>
-          </div>
-
-          <div class="stat-card progress-card">
-            <span class="stat-value progress-value">85%</span>
-            <span class="stat-label progress-label"> Quiz Accuracy </span>
-          </div>
-
-          <div class="stat-card progress-card">
-            <span class="stat-value progress-value">5 Days</span>
-            <span class="stat-label progress-label"> Learning Streak </span>
-          </div>
+        <div class="hero-actions">
+          <button
+            class="btn-primary hero-btn"
+            onclick="
+              document
+                .getElementById('features')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            Explore Features
+          </button>
         </div>
+      </section>
 
-        <div class="progress-bar-wrapper progress-bar">
+      \
+      <section
+        id="features"
+        class="features features-section"
+        aria-labelledby="features-title"
+      >
+        <h2 id="features-title" class="sr-only">Our Features</h2>
+
+        <article class="feature feature-card">
+          <div class="icon feature-icon" aria-hidden="true"></div>
+          <h3 class="title feature-title">Learning & Training</h3>
+          <p class="feature-description">
+            Master 20 essential hand gestures through interactive quizzes and
+            step-by-step tutorials designed for all skill levels.
+          </p>
+        </article>
+
+        <article class="feature feature-card">
+          <div class="icon feature-icon" aria-hidden="true"></div>
+          <h3 class="title feature-title">Real-Time Translator</h3>
+          <p class="feature-description">
+            Instantly convert spoken words to sign language gestures and vice
+            versa with our advanced translation technology.
+          </p>
+        </article>
+
+        <article class="feature feature-card">
+          <div class="icon feature-icon" aria-hidden="true"></div>
+          <h3 class="title feature-title">Sign Language Speller</h3>
+          <p class="feature-description">
+            Spell out any word or phrase using the complete sign language
+            alphabet with visual guidance.
+          </p>
+        </article>
+
+        <article class="feature feature-card">
+          <div class="icon feature-icon" aria-hidden="true"></div>
+          <h3 class="title feature-title">Smart Jacket Simulation</h3>
+          <p class="feature-description">
+            Practice with realistic simulated input from our smart jacket
+            technology for an immersive learning experience.
+          </p>
+        </article>
+
+        <article class="feature feature-card">
+          <div class="icon feature-icon" aria-hidden="true"></div>
+          <h3 class="title feature-title">Motivational Support</h3>
+          <p class="feature-description">
+            Stay motivated with daily inspirational messages and encouragement
+            tailored to your learning journey.
+          </p>
+        </article>
+
+        <article class="feature feature-card">
+          <div class="icon feature-icon" aria-hidden="true"></div>
+          <h3 class="title feature-title">Health Monitoring</h3>
+          <p class="feature-description">
+            Track vital health metrics including heart rate, stress levels, and
+            activity patterns through integrated smart sensors.
+          </p>
+        </article>
+      </section>
+
+      <section
+        class="benefits-section"
+        style="
+          background: var(--white);
+          padding: var(--space-3xl) var(--space-lg);
+          border-top: 1px solid var(--border-color);
+        "
+      >
+        <div
+          class="benefits-container"
+          style="max-width: 1200px; margin: 0 auto"
+        >
+          <h2
+            style="
+              text-align: center;
+              color: var(--primary-blue);
+              margin-bottom: var(--space-xl);
+              font-size: clamp(1.875rem, 4vw, 3rem);
+            "
+          >
+            Why Choose Sign Smart Watch?
+          </h2>
+
           <div
-            class="progress-bar-fill progress-bar-active"
-            style="width: 60%"
-          ></div>
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              gap: var(--space-xl);
+              margin-top: var(--space-2xl);
+            "
+          >
+            <div style="text-align: center; padding: var(--space-lg)">
+              <div
+                style="
+                  width: 64px;
+                  height: 64px;
+                  background: var(--light-blue);
+                  border-radius: var(--radius-lg);
+                  margin: 0 auto var(--space-md);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 2rem;
+                "
+              >
+                🎯
+              </div>
+              <h3
+                style="
+                  color: var(--primary-blue);
+                  margin-bottom: var(--space-sm);
+                  font-size: 1.25rem;
+                "
+              >
+                Personalized Learning
+              </h3>
+              <p style="color: var(--text-secondary); line-height: 1.7">
+                Adaptive curriculum that adjusts to your learning pace and style
+                for optimal progress.
+              </p>
+            </div>
+
+            <div style="text-align: center; padding: var(--space-lg)">
+              <div
+                style="
+                  width: 64px;
+                  height: 64px;
+                  background: var(--light-blue);
+                  border-radius: var(--radius-lg);
+                  margin: 0 auto var(--space-md);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 2rem;
+                "
+              >
+                💙
+              </div>
+              <h3
+                style="
+                  color: var(--primary-blue);
+                  margin-bottom: var(--space-sm);
+                  font-size: 1.25rem;
+                "
+              >
+                Health Integrated
+              </h3>
+              <p style="color: var(--text-secondary); line-height: 1.7">
+                Monitor your well-being while you learn with integrated health
+                tracking features.
+              </p>
+            </div>
+
+            <div style="text-align: center; padding: var(--space-lg)">
+              <div
+                style="
+                  width: 64px;
+                  height: 64px;
+                  background: var(--light-blue);
+                  border-radius: var(--radius-lg);
+                  margin: 0 auto var(--space-md);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 2rem;
+                "
+              >
+                🌐
+              </div>
+              <h3
+                style="
+                  color: var(--primary-blue);
+                  margin-bottom: var(--space-sm);
+                  font-size: 1.25rem;
+                "
+              >
+                Accessible Anywhere
+              </h3>
+              <p style="color: var(--text-secondary); line-height: 1.7">
+                Learn on any device with our responsive platform designed for
+                accessibility.
+              </p>
+            </div>
+
+            <div style="text-align: center; padding: var(--space-lg)">
+              <div
+                style="
+                  width: 64px;
+                  height: 64px;
+                  background: var(--light-blue);
+                  border-radius: var(--radius-lg);
+                  margin: 0 auto var(--space-md);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 2rem;
+                "
+              >
+                🤝
+              </div>
+              <h3
+                style="
+                  color: var(--primary-blue);
+                  margin-bottom: var(--space-sm);
+                  font-size: 1.25rem;
+                "
+              >
+                Community Support
+              </h3>
+              <p style="color: var(--text-secondary); line-height: 1.7">
+                Join a supportive community of learners and connect with others
+                on the same journey.
+              </p>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <section
+        class="cta-section"
+        style="
+          background: var(--primary-gradient);
+          color: var(--white);
+          padding: var(--space-3xl) var(--space-lg);
+          text-align: center;
+        "
+      >
+        <div style="max-width: 800px; margin: 0 auto">
+          <h2
+            style="
+              color: var(--white);
+              margin-bottom: var(--space-md);
+              font-size: clamp(1.875rem, 4vw, 3rem);
+            "
+          >
+            Ready to Start Your Journey?
+          </h2>
+          <p
+            style="
+              font-size: 1.25rem;
+              margin-bottom: var(--space-xl);
+              opacity: 0.95;
+              line-height: 1.8;
+              color: var(--white);
+            "
+          >
+            Join thousands of learners who are breaking communication barriers
+            and improving their lives with Sign Smart Watch.
+          </p>
+          <div
+            style="
+              display: flex;
+              gap: var(--space-md);
+              justify-content: center;
+              flex-wrap: wrap;
+            "
+          >
+            <button
+              class="btn-primary"
+              style="background: var(--white); color: var(--primary-blue)"
+              onclick="window.location.href = 'signup.html'"
+            >
+              Get Started Free
+            </button>
+            <button
+              class="btn-primary"
+              style="
+                background: transparent;
+                color: var(--white);
+                border: 2px solid var(--white);
+              "
+              onclick="window.location.href = 'learning.html'"
+            >
+              View Courses
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      style="
+        background: var(--text-primary);
+        color: var(--white);
+        padding: var(--space-2xl) var(--space-lg);
+        text-align: center;
+      "
+    >
+      <div style="max-width: 1200px; margin: 0 auto">
+        <p
+          style="
+            margin-bottom: var(--space-sm);
+            color: var(--white);
+            opacity: 0.9;
+          "
+        >
+          &copy; 2024 Sign Smart Watch. Empowering communication and health
+          monitoring.
+        </p>
+        <p style="font-size: 0.9rem; color: var(--white); opacity: 0.7">
+          Making sign language accessible to everyone, everywhere.
+        </p>
       </div>
-    </section>
+    </footer>
+
     <script src="js/auth-check.js"></script>
+
+    <!-- Accessibility Helper -->
+    <style>
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    </style>
   </body>
 </html>
