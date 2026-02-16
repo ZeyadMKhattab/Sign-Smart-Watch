@@ -1263,27 +1263,161 @@ a:focus-visible {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* === PRINT STYLES === */
-@media print {
-  header nav,
-  button,
-  .btn-primary {
-    display: none;
-  }
-  
-  body {
-    background: white;
-  }
-  
-  .card,
-  .feature-card {
-    box-shadow: none;
-    border: 1px solid var(--border-color);
-    break-inside: avoid;
-  }
-  
-  .hero-section {
-    background: var(--pale-blue) !important;
-    color: var(--text-primary) !important;
-  }
+/* === CHEER UP PAGE === */
+body[data-mood="happy"] {
+  background: linear-gradient(135deg, #FFF59D 0%, #FFD54F 100%);
+}
+
+body[data-mood="sad"] {
+  background: linear-gradient(135deg, #B0BEC5 0%, #78909C 100%);
+}
+
+body[data-mood="stressed"] {
+  background: linear-gradient(135deg, #FFAB91 0%, #FF7043 100%);
+}
+
+body[data-mood="tired"] {
+  background: linear-gradient(135deg, #90CAF9 0%, #42A5F5 100%);
+}
+
+#header-cheer-up {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+#motivation-section,
+#todo-section {
+  max-width: 700px;
+  margin: var(--space-xl) auto;
+  padding: var(--space-xl);
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+#motivation-card {
+  text-align: center;
+}
+
+#motivation-title {
+  color: var(--primary-blue);
+  font-size: 1.75rem;
+  margin-bottom: var(--space-md);
+}
+
+#motivation-text {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  min-height: 3em;
+  margin-bottom: var(--space-lg);
+}
+
+#motivation-image-container {
+  margin-bottom: var(--space-lg);
+}
+
+#motivation-image {
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+#interaction-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+#interaction-buttons button {
+  background: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+#interaction-buttons button:hover {
+  background: var(--primary-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-blue);
+}
+
+#emoji-reactions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.emoji {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.emoji:hover {
+  transform: scale(1.2);
+}
+
+#todo-section h2 {
+  text-align: center;
+  color: var(--primary-blue);
+  margin-bottom: var(--space-lg);
+}
+
+#todo-input {
+  width: calc(100% - 100px);
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-color);
+  margin-right: var(--space-sm);
+}
+
+#add-todo {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--accent-success);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+#todo-list {
+  list-style: none;
+  padding: 0;
+  margin-top: var(--space-lg);
+}
+
+#todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm);
+  background: var(--pale-blue);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-sm);
+  transition: background var(--transition-base);
+}
+
+#todo-list li:hover {
+  background: var(--light-blue);
+}
+
+.delete-btn {
+  background: var(--accent-error);
+  color: var(--white);
+  border: none;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: var(--space-lg);
+  color: var(--text-secondary);
+  background: var(--white);
+  margin-top: var(--space-xl);
 }

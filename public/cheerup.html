@@ -3,27 +3,210 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cheer Up - Sign Smart Watch</title>
+    <title>Cheer Up</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
-    <header>
+  <body data-mood="happy">
+    <header id="header-cheer-up">
       <nav>
         <a href="index.html">Home</a>
         <a href="speller.html">Speller</a>
         <a href="translator.html">Translator</a>
-        <a href="simulation.html">Simulation</a>
         <a href="health.html">Health Monitor</a>
         <a href="learning.html">Learning</a>
         <a href="cheerup.html">Cheer Up</a>
         <a href="login.html">Login</a>
-        <a href="signup.html">Signup</a>
       </nav>
     </header>
 
     <main>
-      <p>This is the Cheer Up page.</p>
+      <!-- Motivation Card -->
+      <section id="motivation-section">
+        <div id="motivation-card">
+          <h2 id="motivation-title">Your Motivational Quote</h2>
+          <p id="motivation-text"></p>
+          <div id="motivation-image-container">
+            <img id="motivation-image" src="" alt="Motivational illustration" />
+          </div>
+          <div id="interaction-buttons">
+            <button id="cheer-message">Send Cheer Message</button>
+            <button id="save-quote">Save Favorite Quote</button>
+          </div>
+          <div id="emoji-reactions">
+            <span class="emoji">👍</span>
+            <span class="emoji">💖</span>
+            <span class="emoji">🎉</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- To-Do List -->
+      <section id="todo-section">
+        <h2>📝 Your To-Do List</h2>
+        <input type="text" id="todo-input" placeholder="Add a new task..." />
+        <button id="add-todo">Add</button>
+        <ul id="todo-list"></ul>
+      </section>
     </main>
-    <script src="js/auth-check.js"></script>
+
+    <footer>
+      <p>Made with ❤️ for accessibility and positivity</p>
+    </footer>
+
+    <script>
+      // ===== Motivation Quotes =====
+      const quotes = {
+        happy: [
+          {
+            text: "Happiness is contagious. Share your smile!",
+            img: "https://images.unsplash.com/photo-1525268771113-32d9e9021a97?auto=format&fit=crop&w=600&q=80",
+          },
+          {
+            text: "Keep shining, the world needs your light!",
+            img: "https://images.unsplash.com/photo-1476937553229-23af7b8c8d88?auto=format&fit=crop&w=600&q=80",
+          },
+        ],
+        sad: [
+          {
+            text: "Even the darkest clouds pass. You are stronger than you think.",
+            img: "https://images.unsplash.com/photo-1516967124798-10656f7dca28?auto=format&fit=crop&w=600&q=80",
+          },
+          {
+            text: "It’s okay to feel down. Tomorrow brings new hope.",
+            img: "https://images.unsplash.com/photo-1519834785169-98be25ec3f84?auto=format&fit=crop&w=600&q=80",
+          },
+        ],
+        stressed: [
+          {
+            text: "Take a deep breath. You’ve got this!",
+            img: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=600&q=80",
+          },
+          {
+            text: "Step back and relax. Stress is temporary.",
+            img: "https://images.unsplash.com/photo-1518655048521-f130df041f66?auto=format&fit=crop&w=600&q=80",
+          },
+        ],
+        tired: [
+          {
+            text: "Rest well, recharge your mind and body.",
+            img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80",
+          },
+          {
+            text: "Even superheroes need sleep. Take care of yourself!",
+            img: "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=600&q=80",
+          },
+        ],
+        learning: [
+          {
+            text: "The beautiful thing about learning is that no one can take it away from you.",
+            img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80",
+          },
+          {
+            text: "Every expert was once a beginner. Keep pushing.",
+            img: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80",
+          },
+        ],
+        other: [
+          {
+            text: "Your mood matters. Take a moment for yourself today.",
+            img: "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=600&q=80",
+          },
+          {
+            text: "Every feeling is valid. You are valued.",
+            img: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80",
+          },
+        ],
+      };
+      const mood = "happy";
+      document.body.setAttribute("data-mood", mood);
+      const motivationText = document.getElementById("motivation-text");
+      const motivationImage = document.getElementById("motivation-image");
+      const moodQuotes = quotes[mood];
+      const randomQuote =
+        moodQuotes[Math.floor(Math.random() * moodQuotes.length)];
+      motivationText.textContent = randomQuote.text;
+      motivationImage.src = randomQuote.img;
+
+      // High Contrast
+      document
+        .getElementById("contrast-toggle")
+        .addEventListener("click", () => {
+          document.body.classList.toggle("high-contrast");
+        });
+
+      // Save Quote
+      document.getElementById("save-quote").addEventListener("click", () => {
+        const quote = motivationText.textContent;
+        let savedQuotes = JSON.parse(
+          localStorage.getItem("cheerQuotes") || "[]",
+        );
+        savedQuotes.push(quote);
+        localStorage.setItem("cheerQuotes", JSON.stringify(savedQuotes));
+        alert("Quote saved to your favorites!");
+      });
+
+      // Cheer Message
+      document.getElementById("cheer-message").addEventListener("click", () => {
+        alert("Your cheer message is ready to share with your family/friends!");
+      });
+
+      // Emoji Reactions
+      document.querySelectorAll(".emoji").forEach((emoji) => {
+        emoji.addEventListener("click", () =>
+          alert(`You reacted with ${emoji.textContent}`),
+        );
+      });
+
+      // Confetti
+      if (mood === "happy") {
+        const duration = 2000;
+        const end = Date.now() + duration;
+        (function frame() {
+          const confetti = document.createElement("div");
+          confetti.textContent = "🎉";
+          confetti.style.position = "fixed";
+          confetti.style.fontSize = Math.random() * 24 + 20 + "px";
+          confetti.style.left = Math.random() * window.innerWidth + "px";
+          confetti.style.top = "0";
+          document.body.appendChild(confetti);
+          const animation = setInterval(() => {
+            confetti.style.top = parseInt(confetti.style.top) + 5 + "px";
+            if (parseInt(confetti.style.top) > window.innerHeight) {
+              confetti.remove();
+              clearInterval(animation);
+            }
+          }, 16);
+          if (Date.now() < end) requestAnimationFrame(frame);
+        })();
+      }
+
+      // ===== To-Do List =====
+      const todoInput = document.getElementById("todo-input");
+      const addBtn = document.getElementById("add-todo");
+      const todoList = document.getElementById("todo-list");
+
+      function renderTodoItem(text) {
+        const li = document.createElement("li");
+        li.textContent = text;
+        const delBtn = document.createElement("button");
+        delBtn.textContent = "Delete";
+        delBtn.classList.add("delete-btn");
+        delBtn.addEventListener("click", () => li.remove());
+        li.appendChild(delBtn);
+        todoList.appendChild(li);
+      }
+
+      addBtn.addEventListener("click", () => {
+        const task = todoInput.value.trim();
+        if (task) {
+          renderTodoItem(task);
+          todoInput.value = "";
+        }
+      });
+
+      todoInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") addBtn.click();
+      });
+    </script>
   </body>
 </html>
