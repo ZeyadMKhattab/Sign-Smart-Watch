@@ -27,12 +27,22 @@ const translatorRoutes = require('./routes/translator');
 const learningRoutes = require('./routes/learning');
 const healthRoutes = require('./routes/health');
 const userRoutes = require('./routes/user');
+const coursesRoutes = require('./routes/courses');
+const lessonsRoutes = require('./routes/lessons');
+const quizzesRoutes = require('./routes/quizzes');
+const seedRoutes = require('./routes/seed');
+const coachRoutes = require('./routes/coach');
 
 const { checkAuth } = require('./middleware/auth');
 
 // Public routes (no authentication required)
 app.use('/api/auth', authRoutes);
 app.use('/api/translator', translatorRoutes);
+app.use('/api/courses', coursesRoutes);
+app.use('/api/lessons', lessonsRoutes);
+app.use('/api/quizzes', quizzesRoutes);
+app.use('/api/seed', seedRoutes);
+app.use('/api/coach', coachRoutes);
 
 // Protected routes (authentication required)
 app.use('/api/learning', checkAuth, learningRoutes);

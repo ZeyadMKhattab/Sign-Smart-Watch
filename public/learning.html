@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Learning - Sign Smart Watch</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Learning & Quizzes | Sign Smart Watch</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/responsive.css" />
   </head>
+
   <body>
     <header>
       <nav>
@@ -24,16 +26,164 @@
           <a href="learning.html">Learning</a>
           <a href="cheerup.html">Cheer Up</a>
           <a href="login.html">Login</a>
-          <a href="signup.html">Signup</a>
         </div>
       </nav>
     </header>
 
-    <main>
-      <p>This is the Learning page.</p>
-    </main>
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <h1>Learning & Quizzes</h1>
+      <p>
+        Learn sign language through interactive lessons and quizzes designed for
+        inclusive, real-world communication.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn-primary" id="startLearning">Start Learning</button>
+        <button class="btn-secondary" id="startQuiz">Take a Quiz</button>
+      </div>
+    </section>
 
-      <footer
+    <!-- ================= LEARNING PATHS ================= -->
+    <section class="container">
+      <h2>Learning Paths</h2>
+      <p>Select a path and learn at your own pace.</p>
+
+      <div class="paths">
+        <div class="card" data-course="daily">
+          <h3>Beginner Sign Language</h3>
+          <p>Alphabet, numbers, and basic expressions.</p>
+          <a
+            href="https://www.lifeprint.com/asl101/"
+            target="_blank"
+            class="card-link"
+          >
+            Learn More
+          </a>
+        </div>
+
+        <div class="card" data-course="daily">
+          <h3>Daily Conversations</h3>
+          <p>Signs for everyday communication.</p>
+          <a
+            href="https://www.signaturelearninghub.co.uk/standalone_quizzes"
+            target="_blank"
+            class="card-link"
+          >
+            Learn More
+          </a>
+        </div>
+
+        <div class="card" data-course="emergency">
+          <h3>Emergency & Safety</h3>
+          <p>Critical signs for urgent situations.</p>
+          <a
+            href="https://www.signaturelearninghub.co.uk/standalone_quizzes"
+            target="_blank"
+            class="card-link"
+          >
+            Learn More
+          </a>
+        </div>
+
+        <div class="card" data-course="workplace">
+          <h3>Workplace Communication</h3>
+          <p>Professional signs for work environments.</p>
+          <a
+            href="https://www.youtube.com/playlist?list=PLMN7QCuj6dfY29d_bG3VP2UWi9l652jU-"
+            target="_blank"
+            class="card-link"
+          >
+            Learn More
+          </a>
+        </div>
+
+        <div class="card" data-course="medical">
+          <h3>Medical & Healthcare</h3>
+          <p>Signs used in hospitals and clinics.</p>
+          <a href="https://signs-ai.com/" target="_blank" class="card-link">
+            Learn More
+          </a>
+        </div>
+        <div class="card" data-course="coaching">
+          <h3>A Meeting with a Coach Online</h3>
+          <p>One-on-one coaching sessions with sign language experts.</p>
+          <a href="coach.html" class="card-link">
+            Book a Session
+          </a>
+        </div>
+        <div class="card" data-course="daily">
+          <h3>Weekly Sessions</h3>
+          <p>Book a Session.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LESSON EXPERIENCE ================= -->
+    <section class="container">
+      <div class="lesson-box">
+        <h2>Lesson Experience</h2>
+        <p>Each lesson is designed to be clear, visual, and easy to follow.</p>
+
+        <ul>
+          <li>Sign language video or animation</li>
+          <li>Step-by-step gesture explanation</li>
+          <li>Text and optional voice guidance</li>
+          <li>Practice mode with repetition</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= QUIZZES ================= -->
+    <section class="container">
+      <h2>Quizzes & Challenges</h2>
+      <p>Test your knowledge and improve your skills.</p>
+
+      <div class="quiz-types">
+        <div class="card">Sign → Meaning</div>
+        <div class="card">Meaning → Sign</div>
+        <div class="card">Video-Based Questions</div>
+        <div class="card">Emergency Scenarios</div>
+      </div>
+    </section>
+
+    <!-- ================= PROGRESS ================= -->
+    <section class="container">
+      <h2>Your Progress</h2>
+
+      <div class="progress">
+        <div class="stat">
+          <h3 id="lessonsCompleted">0</h3>
+          <p>Lessons Completed</p>
+        </div>
+
+        <div class="stat">
+          <h3 id="quizAccuracy">0%</h3>
+          <p>Quiz Accuracy</p>
+        </div>
+
+        <div class="stat">
+          <h3 id="dayStreak">0</h3>
+          <p>Day Streak</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ACCESSIBILITY ================= -->
+    <section class="container">
+      <div class="accessibility">
+        <h2>Accessibility First</h2>
+        <ul>
+          <li>High-contrast visuals</li>
+          <li>Large readable text</li>
+          <li>Keyboard navigation</li>
+          <li>Simple language support</li>
+        </ul>
+      </div>
+    </section>
+
+    <main style="display: none"></main>
+
+    <footer
       style="
         background: var(--text-primary);
         color: var(--white);
@@ -57,6 +207,12 @@
         </p>
       </div>
     </footer>
+
+    <!-- ================= SCRIPTS ================= -->
     <script src="js/auth-check.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/learning.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

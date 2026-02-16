@@ -1,42 +1,32 @@
-document.addEventListener('DOMContentLoaded', async () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+document.addEventListener("DOMContentLoaded", async () => {
 
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    }
+  try {
+    const response = await fetch("/api/auth/status");
+    const data = await response.json();
 
-    const nav = document.querySelector('nav');
-
-    try {
-        const response = await fetch('/api/auth/status');
-        const data = await response.json();
-
-        if (data.loggedIn) {
-            // User is logged in, show profile link
-            const loginLink = nav.querySelector('a[href="login.html"]');
-            if (loginLink) {
-                loginLink.textContent = 'Profile';
-                loginLink.href = '/profile';
-            }
-            const signupLink = nav.querySelector('a[href="signup.html"]');
-            if (signupLink) {
-                signupLink.remove();
-            }
-        } else {
-            // User is not logged in, show login/signup links
-            const loginLink = nav.querySelector('a[href="login.html"]');
-            if (!loginLink) {
-                const profileLink = nav.querySelector('a[href="/profile"]');
-                if (profileLink) {
-                    profileLink.textContent = 'Login';
-                    profileLink.href = 'login.html';
-                }
-            }
+    if (data.loggedIn) {
+      // User is logged in, show profile link
+      const loginLink = nav.querySelector('a[href="login.html"]');
+      if (loginLink) {
+        loginLink.textContent = "Profile";
+        loginLink.href = "/profile";
+      }
+      const signupLink = nav.querySelector('a[href="signup.html"]');
+      if (signupLink) {
+        signupLink.remove();
+      }
+    } else {
+      // User is not logged in, show login/signup links
+      const loginLink = nav.querySelector('a[href="login.html"]');
+      if (!loginLink) {
+        const profileLink = nav.querySelector('a[href="/profile"]');
+        if (profileLink) {
+          profileLink.textContent = "Login";
+          profileLink.href = "login.html";
         }
-    } catch (error) {
-        console.error('Error checking auth status:', error);
+      }
     }
+  } catch (error) {
+    console.error("Error checking auth status:", error);
+  }
 });

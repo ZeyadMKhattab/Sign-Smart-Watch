@@ -51,11 +51,7 @@
         <div class="hero-actions">
           <button
             class="btn-primary hero-btn"
-            onclick="
-              document
-                .getElementById('features')
-                .scrollIntoView({ behavior: 'smooth' })
-            "
+            id="exploreFeatures"
           >
             Explore Features
           </button>
@@ -420,9 +416,8 @@
             "
           >
             <button
-              class="btn-primary"
+              class="btn-primary btn-signup"
               style="background: var(--white); color: var(--primary-blue)"
-              onclick="window.location.href = 'signup.html'"
             >
               Get Started Free
             </button>
@@ -433,7 +428,6 @@
                 color: var(--white);
                 border: 2px solid var(--white);
               "
-              onclick="window.location.href = 'learning.html'"
             >
               View Courses
             </button>
@@ -483,5 +477,8 @@
         border-width: 0;
       }
     </style>
+    <script src="./js/main.js"></script>
+    <script src="./js/auth-check.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

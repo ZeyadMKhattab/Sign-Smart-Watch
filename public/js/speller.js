@@ -44,6 +44,14 @@ const eslRadio = document.getElementById("esl");
 const commonWordOkay = document.getElementById("common-word-okay");
 const commonWordHello = document.getElementById("common-word-hello");
 
+// Add event listeners for common word buttons
+document.querySelectorAll(".common-word[data-word]").forEach(btn => {
+  btn.addEventListener("click", function() {
+    const word = this.getAttribute("data-word");
+    getCommonWords(word);
+  });
+});
+
 aslRadio.addEventListener("change", () => {
   if (aslRadio.checked) {
     aslContainer.style.display = "block";
@@ -95,7 +103,7 @@ if (!emergedTitle) {
 }
 
 const inputField = document.getElementById("speller-search-input");
-const clearButton = document.querySelector(".spell-form button");
+const clearButton = document.getElementById("clearInputBtn");
 
 function attachCardListeners() {
   alphabetCards.forEach((card) => {

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Coach Session - Sign Smart Watch</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <div class="nav-links">
+          <a href="speller.html">Speller</a>
+          <a href="translator.html">Translator</a>
+          <a href="simulation.html">Simulation</a>
+          <a href="health.html">Health Monitor</a>
+          <a href="learning.html">Learning</a>
+          <a href="cheerup.html">Cheer Up</a>
+          <a href="login.html">Login</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <h1>Book a Coaching Session</h1>
+        <p>Connect with expert sign language coaches for personalized, one-on-one online sessions.</p>
+
+        <!-- Available Coaches Section -->
+        <section class="coaches-section">
+          <h2>Available Coaches</h2>
+          <div class="coaches-grid" id="coachesContainer">
+            <!-- Coaches will be loaded here by JavaScript -->
+            <div class="loading-placeholder">Loading coaches...</div>
+          </div>
+        </section>
+
+        <!-- Booking Form Section -->
+        <section class="booking-section" style="display: none;" id="bookingSection">
+          <h2>Complete Your Booking</h2>
+          <form id="coachBookingForm">
+            <div class="form-group">
+              <label for="coachName">Selected Coach</label>
+              <input type="text" id="coachName" readonly />
+            </div>
+
+            <div class="form-group">
+              <label for="sessionDate">Preferred Date</label>
+              <input type="date" id="sessionDate" required />
+            </div>
+
+            <div class="form-group">
+              <label for="sessionTime">Preferred Time</label>
+              <input type="time" id="sessionTime" required />
+            </div>
+
+            <div class="form-group">
+              <label for="sessionDuration">Session Duration</label>
+              <select id="sessionDuration" required>
+                <option value="">Select Duration</option>
+                <option value="30">30 minutes ($15)</option>
+                <option value="60">60 minutes ($25)</option>
+                <option value="90">90 minutes ($35)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="focusArea">Focus Area</label>
+              <select id="focusArea" required>
+                <option value="">Select Focus Area</option>
+                <option value="alphabet">Sign Language Alphabet</option>
+                <option value="conversation">Daily Conversations</option>
+                <option value="professional">Professional Communication</option>
+                <option value="medical">Medical & Healthcare</option>
+                <option value="emergency">Emergency & Safety</option>
+                <option value="custom">Custom Topic</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="notes">Additional Notes (Optional)</label>
+              <textarea id="notes" rows="4" placeholder="Any specific goals or questions..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="agreeTerms" required />
+                I agree to the coaching terms and conditions
+              </label>
+            </div>
+
+            <button type="submit" class="btn-primary">Confirm Booking</button>
+            <button type="button" class="btn-secondary" id="cancelBooking">Cancel</button>
+          </form>
+        </section>
+
+        <!-- Upcoming Sessions -->
+        <section class="sessions-section">
+          <h2>Your Upcoming Sessions</h2>
+          <div id="upcomingSessions" class="sessions-list">
+            <p class="empty-state">No upcoming sessions. Book your first session with a coach!</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer
+      style="
+        background: var(--text-primary);
+        color: var(--white);
+        padding: var(--space-2xl) var(--space-lg);
+        text-align: center;
+      "
+    >
+      <div style="max-width: 1200px; margin: 0 auto">
+        <p
+          style="
+            margin-bottom: var(--space-sm);
+            color: var(--white);
+            opacity: 0.9;
+          "
+        >
+          &copy; 2026 ICIC Sign Smart Watch. Empowering communication and health
+          monitoring.
+        </p>
+        <p style="font-size: 0.9rem; color: var(--white); opacity: 0.7">
+          Making sign language accessible to everyone, everywhere.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/auth-check.js"></script>
+    <script src="js/coach.js"></script>
+  </body>
+</html>

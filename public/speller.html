@@ -51,7 +51,7 @@
             class="common-word"
             id="common-word-okay"
             title="Okay"
-            onclick="getCommonWords('Okay')"
+            data-word="Okay"
           >
             Try "Okay"
           </div>
@@ -60,7 +60,7 @@
             class="common-word"
             id="common-word-thank-you"
             title="Thank You"
-            onclick="getCommonWords('Thank You')"
+            data-word="Thank You"
           >
             Try "Thank You"
           </div>
@@ -69,12 +69,12 @@
             class="common-word"
             id="common-word-hello"
             title="Hello"
-            onclick="getCommonWords('Hello')"
+            data-word="Hello"
           >
             Try "Hello"
           </div>
           <br />
-          <button onclick="clearInput()">clear</button>
+          <button id="clearInputBtn">clear</button>
         </div>
         <div style="display: flex" class="language-selector">
           <input type="radio" id="asl" name="language" value="asl" checked />
@@ -428,5 +428,6 @@
 
     <script src="js/auth-check.js"></script>
     <script src="js/speller.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
