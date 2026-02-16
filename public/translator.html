@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Translator - Sign Smart Watch</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/translator.css" />
 </head>
 <body>
   <header>
@@ -12,6 +13,7 @@
       <a href="index.html">Home</a>
       <a href="speller.html">Speller</a>
       <a href="translator.html">Translator</a>
+      <a href="simulation.html">Simulation</a>
       <a href="health.html">Health Monitor</a>
       <a href="learning.html">Learning</a>
       <a href="cheerup.html">Cheer Up</a>
@@ -21,8 +23,32 @@
   </header>
 
   <main>
-    <p>This is the Translator page.</p>
+    <h1>Sign Language Translator</h1>
+
+    <div class="translator-section">
+      <h2>Speech to Sign</h2>
+      <div class="controls">
+        <label for="language-select">Language:</label>
+        <select id="language-select">
+          <option value="en-US">ASL (American)</option>
+          <option value="ar-EG">ESL (Egyptian)</option>
+        </select>
+        <button id="start-stop-btn">Start Listening</button>
+      </div>
+      <p id="recognized-text">Recognized text will appear here.</p>
+    </div>
+
+    <div class="translator-section">
+      <h2>Text to Sign</h2>
+      <div class="controls">
+        <input type="text" id="text-input" placeholder="Enter text to translate">
+        <button id="translate-btn">Translate</button>
+      </div>
+    </div>
+
+    <div id="sign-image-container"></div>
   </main>
   <script src="js/auth-check.js"></script>
+  <script src="js/translator.js"></script>
 </body>
 </html>
