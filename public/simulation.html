@@ -3,6 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Language Simulation - Sign-Smart-Watch</title>
+    <meta name="description" content="Practice your sign language skills in real-life scenarios with our interactive simulation tool." />
+    <meta name="keywords" content="sign language simulation, practice sign language, interactive scenarios, ASL practice" />
+    <meta name="author" content="Sign-Smart-Watch" />
+    <meta property="og:title" content="Sign Language Simulation - Sign-Smart-Watch" />
+    <meta property="og:description" content="Practice your sign language skills in real-life scenarios with our interactive simulation tool." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sign-smart-watch.vercel.app/simulation.html" />
+    <meta property="og:image" content="https://sign-smart-watch.vercel.app/assets/og-image.jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sign Language Simulation - Sign-Smart-Watch" />
+    <meta name="twitter:description" content="Practice your sign language skills in real-life scenarios with our interactive simulation tool." />
+    <meta name="twitter:image" content="https://sign-smart-watch.vercel.app/assets/og-image.jpeg" />
     <link rel="stylesheet" href="./css/style.css" />
     <style>
       #video-container {
@@ -32,7 +45,6 @@
         margin-top: 20px;
       }
     </style>
-    <title>Sign Smart Watch - Simulation</title>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
@@ -107,7 +119,6 @@
       let lastSpeech = 0;
       let lastPoints = [];
 
-      
       function smooth(points) {
         if (lastPoints.length === 0) {
           lastPoints = points;
@@ -139,6 +150,98 @@
         return new Promise((res) => {
           video.onloadedmetadata = () => res();
         });
+      }
+
+      // "I Love You" - Thumb, Index, and Pinky extended
+      const iLoveYou = new fp.GestureDescription("I-Love-You");
+      iLoveYou.addCurl(fp.Finger.Thumb, fp.FingerCurl.NoCurl, 1.0);
+      iLoveYou.addCurl(fp.Finger.Index, fp.FingerCurl.NoCurl, 1.0);
+      iLoveYou.addCurl(fp.Finger.Pinky, fp.FingerCurl.NoCurl, 1.0);
+      iLoveYou.addDirection(
+        fp.Finger.Index,
+        fp.FingerDirection.VerticalUp,
+        1.0,
+      );
+      iLoveYou.addDirection(
+        fp.Finger.Pinky,
+        fp.FingerDirection.VerticalUp,
+        1.0,
+      );
+      for (let finger of [fp.Finger.Middle, fp.Finger.Ring]) {
+        iLoveYou.addCurl(finger, fp.FingerCurl.FullCurl, 1.0);
+      }
+
+      // "Hello" - Open hand (similar to open palm but interpreted as Hello)
+      const hello = new fp.GestureDescription("Hello");
+      for (let finger of [
+        fp.Finger.Thumb,
+        fp.Finger.Index,
+        fp.Finger.Middle,
+        fp.Finger.Ring,
+        fp.Finger.Pinky,
+      ]) {
+        hello.addCurl(finger, fp.FingerCurl.NoCurl, 1.0);
+      }
+
+      // "Thank You" - Open hand moving from chin (we'll use open hand)
+      const thankYou = new fp.GestureDescription("Thank-You");
+      for (let finger of [
+        fp.Finger.Thumb,
+        fp.Finger.Index,
+        fp.Finger.Middle,
+        fp.Finger.Ring,
+        fp.Finger.Pinky,
+      ]) {
+        thankYou.addCurl(finger, fp.FingerCurl.NoCurl, 1.0);
+      }
+
+      // "Please" - Open hand on chest (circular motion)
+      const please = new fp.GestureDescription("Please");
+      for (let finger of [
+        fp.Finger.Thumb,
+        fp.Finger.Index,
+        fp.Finger.Middle,
+        fp.Finger.Ring,
+        fp.Finger.Pinky,
+      ]) {
+        please.addCurl(finger, fp.FingerCurl.NoCurl, 1.0);
+      }
+
+      // "Yes" - Fist (like nodding)
+      const yes = new fp.GestureDescription("Yes");
+      for (let finger of [
+        fp.Finger.Thumb,
+        fp.Finger.Index,
+        fp.Finger.Middle,
+        fp.Finger.Ring,
+        fp.Finger.Pinky,
+      ]) {
+        yes.addCurl(finger, fp.FingerCurl.FullCurl, 1.0);
+      }
+
+      // "No" - Index and Middle finger extended (like scissors)
+      const no = new fp.GestureDescription("No");
+      no.addCurl(fp.Finger.Index, fp.FingerCurl.NoCurl, 1.0);
+      no.addCurl(fp.Finger.Middle, fp.FingerCurl.NoCurl, 1.0);
+      no.addDirection(fp.Finger.Index, fp.FingerDirection.HorizontalLeft, 1.0);
+      no.addDirection(fp.Finger.Index, fp.FingerDirection.HorizontalRight, 1.0);
+      no.addDirection(fp.Finger.Middle, fp.FingerDirection.HorizontalLeft, 1.0);
+      no.addDirection(
+        fp.Finger.Middle,
+        fp.FingerDirection.HorizontalRight,
+        1.0,
+      );
+      for (let finger of [fp.Finger.Ring, fp.Finger.Pinky, fp.Finger.Thumb]) {
+        no.addCurl(finger, fp.FingerCurl.FullCurl, 1.0);
+      }
+
+      // "OK" - Thumb and Index forming circle
+      const ok = new fp.GestureDescription("OK");
+      ok.addCurl(fp.Finger.Thumb, fp.FingerCurl.HalfCurl, 1.0);
+      ok.addCurl(fp.Finger.Index, fp.FingerCurl.HalfCurl, 1.0);
+      for (let finger of [fp.Finger.Middle, fp.Finger.Ring, fp.Finger.Pinky]) {
+        ok.addCurl(finger, fp.FingerCurl.NoCurl, 1.0);
+        ok.addDirection(finger, fp.FingerDirection.VerticalUp, 1.0);
       }
 
       const thumbsUp = new fp.GestureDescription("ThumbsUp");
@@ -573,6 +676,14 @@
       }
 
       const knownGestures = [
+        iLoveYou,
+        hello,
+        thankYou,
+        ok,
+        yes,
+        no,
+        thumbsUp,
+        openPalm,
         thumbsUp,
         openPalm,
         letterA,
